@@ -137,3 +137,38 @@ hero
 cards
 ==============
 */
+.cards {
+  padding: 4rem 0;
+}
+.title {
+  text-align: center;
+}
+.cards-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+.card {
+  border: 1px solid var(--darkGrey);
+  margin-bottom: 3rem;
+}
+.card-info {
+  padding: 1rem;
+}
+.card-footer {
+  background: var(--darkGrey);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+.card-footer a {
+  color: var(--primaryColor);
+  transition: var(--mainTransition);
+}
+.card-footer a:hover {
+  color: var(--offWhite);
+}
+.card-footer i {
+  font-size: 1.5rem;
+}
