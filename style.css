@@ -276,3 +276,118 @@ tiles
     grid-area: i;
   }
 }
+/* 
+==============
+layout
+==============
+*/
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+.header {
+  text-align: center;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  padding: 0.5rem 0;
+}
+.navbar {
+  background: var(--darkGrey);
+}
+.navbar li {
+  list-style: none;
+  padding: 0.75rem;
+}
+.navbar a {
+  color: var(--mainBlack);
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+  display: inline-block;
+
+  transition: var(--mainTransition);
+}
+.navbar a:hover {
+  color: var(--mainWhite);
+}
+.content {
+  padding: 1rem;
+  margin: 0 auto;
+}
+.content p {
+  font-size: 1rem;
+}
+.sidebar {
+  background: var(--primaryColor);
+  padding: 0.5rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: space-between;
+  text-align: center;
+}
+.sidebar a {
+  color: var(--offWhite);
+  font-size: 1.25rem;
+  transition: var(--mainTransition);
+}
+.sidebar a:hover {
+  color: #afafaf;
+}
+.footer {
+  background: var(--mainBlack);
+  color: var(--mainWhite);
+  text-align: center;
+  text-transform: capitalize;
+}
+.footer p {
+  font-size: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+@media screen and (min-width: 1170px) {
+  .main {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "a a a"
+      "b c d"
+      "e e e";
+  }
+  .header {
+    grid-area: a;
+  }
+  .navbar {
+    grid-area: b;
+  }
+  .navbar ul {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+  }
+  .content {
+    grid-area: c;
+  }
+  .sidebar {
+    grid-area: d;
+    display: grid;
+    grid-template-columns: 1fr;
+    background: var(--darkGrey);
+    padding: 1rem;
+    align-items: center;
+  }
+  .sidebar a:hover {
+    color: var(--mainBlack);
+  }
+  .footer {
+    grid-area: e;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
